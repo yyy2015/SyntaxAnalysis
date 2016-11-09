@@ -34,6 +34,7 @@ public class State {
                     }
                 }
             }
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -53,6 +54,7 @@ public class State {
                     return product[0]+"%"+product[1];
                 }
             }
+            brCfg.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -83,6 +85,7 @@ public class State {
                 }
 
             }
+            brPpt.close();
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,3 +1,6 @@
+import lexAnalyzer.IOHelper;
+import lexAnalyzer.LexAnalyzer;
+
 import java.io.*;
 
 /**
@@ -5,22 +8,10 @@ import java.io.*;
  */
 public class main {
     public static void main(String[] args){
-        BufferedReader br=null;
-        String inputStr = "";
-        try {
-            br = new BufferedReader(new InputStreamReader(
-                    new FileInputStream(new File("input.txt"))));
-            String line = "";
-            while((line=br.readLine())!=null){
-                inputStr+=line;
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        char[] input = inputStr.toCharArray();
+        Input input = new Input();
         Analyzer analyzer = new Analyzer();
-        analyzer.syntaxAnalyze(input,"parsing_table.txt","cfg.txt");
+        char[] input_array = input.getSyntaxInput("input.txt","tokenSequence.txt").toCharArray();
+        analyzer.syntaxAnalyze(input_array,"parsing_table.txt","cfg.txt");
     }
+
 }

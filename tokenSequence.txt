@@ -1,0 +1,5 @@
+<ID,a>
+<OPERATOR_3,*>
+<ID,b>
+<OPERATOR_1,+>
+<ID,c>
